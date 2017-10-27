@@ -1,0 +1,21 @@
+@function golden-ratio ($n, $exp: 1) {
+	$r: 1.6180339887;
+	@if $exp >= 0 {
+		@for $i from 1 through $exp {
+			$n: $n * $r;
+		}
+	} @else {
+		@for $i from $exp to 0 {
+			$n: $n / $r;
+		}
+	}
+	@return $n;
+}
+
+@media screen and (min-width: 480px) {
+	@include sizes(m-);
+	svg .label {
+		font-size: golden-ratio(1em, -1);
+		line-height: 1.2em;
+	}
+}

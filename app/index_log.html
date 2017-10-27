@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Sensorenresidenz</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:css styles/main.css -->
+		<link rel="stylesheet" href="styles/main.css">
+		<!-- endbuild -->
+
+	</head>
+	<body>
+		<header>
+			<h1>Sensorenresidenz</h1>
+		</header>
+		<div id="console">
+			
+				<div class="stamp"></div>
+				<div class="device"></div>
+				<div class="status"></div>
+		</div>
+				
+		<section class="timeline">
+			<nav>
+				<button class="button button-play-pause playing" id="button-play-pause"><span class="default">Start/Pause</span></button>
+				<input type="range" class="slider slider-simulation-speed" min="-95" max="95"  value="35">
+				<div class="timeline-chart timeline-chart-day">
+					<canvas id="timeline-graph" height="80px"></canvas>
+				</div>
+				<div class="timeline-chart timeline-chart-presence"></div>
+				<div class="timeline-chart timeline-chart-power"></div>
+			</nav>
+		</section>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/chroma-js/chroma.js"></script>
+		<script src="/bower_components/sprintf/src/sprintf.js"></script>
+		<script src="/bower_components/lodash/lodash.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:js scripts/main.js -->
+		<script src="scripts/vendor/suncalc.js"></script>
+		<script src="scripts/css.js"></script>
+		<script src="scripts/helpers.js"></script>
+		<script src="scripts/de-DE.js"></script>
+		<script src="scripts/clock.js"></script>
+		<script src="scripts/graphs.js"></script>
+		<script src="scripts/inspector.js"></script>
+		<script src="scripts/timeline.js"></script>
+		<script src="scripts/sensor.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/log.js"></script>
+		<script src="scripts/resize.js"></script>
+		<!-- endbuild -->
+</body>
+</html>

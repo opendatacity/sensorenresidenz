@@ -1,0 +1,14 @@
+{
+  "name": "sensor-playground",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "chroma-js": "~1.1.1",
+    "sprintf": "~1.0.3",
+    "lodash": "~3.10.1"
+  },
+  "devDependencies": {
+    "chai": "~3.3.0",
+    "mocha": "~2.3.3"
+  }
+}

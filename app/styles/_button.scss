@@ -1,0 +1,27 @@
+.button, %button, button {
+	$bg-color: $color-primary;
+	$text-color: $color-text-inverted;
+	@mixin border ($bg) { border-color: darken($bg, 10%); }
+	$hover-bg-color: darken($color-primary, 5%);
+	$active-bg-color: darken($color-primary, 10%);
+
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	background-color: $bg-color;
+	color: $text-color;
+	border: 1px solid transparent;
+	//@include border($bg-color);
+	font: inherit;
+	padding: .5em;
+	cursor: pointer;
+	&:hover {
+		background-color: $hover-bg-color;
+	}
+	&:active, &:focus {
+		outline: none;
+	}
+	&:active, &.active {
+		background-color: $active-bg-color;
+		@include border($active-bg-color);
+	}
+}

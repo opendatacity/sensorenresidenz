@@ -1,0 +1,127 @@
+@import "webfonts";
+@import "colors";
+@import "mixins";
+@import "weights";
+@import "sizes";
+
+@import "slider";
+@import "timeline";
+@import "floorplan";
+@import "button";
+@import "sidebar";
+@import "events-log";
+@import "device-inspector";
+@import "media-queries";
+
+html, body {
+	height: 100%;
+}
+body {
+	font: 1em/1.2em "Source Sans Pro", "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: $color-background;
+	color: $color-text;
+	transition: background .5s ease;
+	position: relative;
+}
+body.night {
+	background-color: $color-background-night;
+}
+#console {
+	display: flex;
+	font: 0.8em "Courier";
+}
+.stamp {
+	color: #FF0000;
+}
+.device {
+	margin-left: 10px;
+}
+.status {
+	margin-left: 20px;
+	color: #00AA88;
+}
+h1 {
+	@extend %weight-light;
+	@extend %size-bigger;
+	display: none;
+}
+h2 {
+	@extend %weight-light;
+	@extend %size-big;
+}
+h3 {
+	@extend %weight-normal;
+	@extend %size-normal;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	margin: 1em 0 0;
+	padding: 0 0 .3em;
+}
+.wrapper {
+	width: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: $timeline-height;
+	position: absolute;
+	overflow: auto;
+}
+
+
+
+#activator {
+	background-color: #365d73;
+	color: #FFF;
+	float:right;
+	cursor: pointer;
+	padding: 10px 20px;
+}
+.legende {
+	margin-top: 50px;
+	position: fixed;
+	padding: 10px 20px;
+	cursor:pointer;
+	width: 200px;
+}
+#box {
+	max-height: 80%;
+	left: 5%;
+	right: 5%;
+	overflow: scroll;
+}
+.overlay{
+    background: rgba(0,0,0,0.75);
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:100;
+}
+.box{
+	font: 0.8em "Helvetica Neue", sans-serif;
+    position:fixed;
+    top:-800px;
+    left:10%;
+    right:10%;
+    background-color:#fff;
+    color:#7F7F7F;
+    padding:20px;
+    border:2px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:10px;
+    -khtml-border-radius:10px;
+    -moz-box-shadow: 0 1px 5px #333;
+    -webkit-box-shadow: 0 1px 5px #333;
+    z-index:101;
+}
+a.boxclose{
+	color: #365d73;
+    float: right;
+    margin-right: 50px;
+    width:26px;
+    height:26px;
+    cursor:pointer;
+}
