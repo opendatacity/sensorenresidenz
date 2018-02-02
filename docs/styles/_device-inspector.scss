@@ -1,0 +1,42 @@
+.device-inspector {
+	.graph {
+		color: $color-primary;
+		background-color: rgba($color-primary, .1);
+	}
+	.axes {
+		position: absolute;
+		margin: -20px;
+		left: 0;
+	}
+}
+.device-sensor-graph {
+	position: relative;
+}
+
+.device-sensor-count {
+	@extend %weight-light;
+	margin: 0 0 0 .5em;
+	opacity: .25;
+	@include transition(opacity);
+}
+.device-sensor:hover .device-sensor-count {
+	opacity: 1;
+}
+
+.device-sensor-statistics {
+	dt {
+		float: left;
+		margin-right: 1em;
+	}
+	dd {
+		margin: 0;
+		clear: right;
+		position: relative;
+	}
+	.bar {
+		position: absolute;
+		left: 0;
+		height: 1em;
+		background-color: rgba($color-primary, .1);
+	}
+}

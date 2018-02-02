@@ -1,0 +1,28 @@
+@mixin slider-height($height: 20px) {
+	height: $height;
+	&::-webkit-slider-runnable-track {
+		height: $height;
+	}
+	&::-webkit-slider-thumb {
+		width: $height;
+		height: $height;
+	}
+}
+
+input[type="range"] {
+	@include slider-height;
+	position: relative;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	background-color: rgba($color-primary, .2);
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	&:active, &:focus {
+		outline: none;
+	}
+	&::-webkit-slider-thumb {
+		@extend %button;
+		box-sizing: border-box;
+	}
+}

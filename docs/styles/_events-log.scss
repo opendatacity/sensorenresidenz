@@ -1,0 +1,8 @@
+.events-log {
+	@extend %size-small;
+	background-color: $color-primary;
+	color: $color-text-inverted;
+	height: 1.2em * 14;
+	overflow: hidden;
+	padding: .6em;
+}

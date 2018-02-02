@@ -1,0 +1,26 @@
+// Main color scheme
+// https://kuler.adobe.com/Lucys-Lotions-colour-color-theme-4313510/
+$c1: #f4fac7;
+$c2: #7bad8d;
+$c3: #ffb159;
+$c4: #f77f45;
+$c5: #365d73;
+
+$color-primary: $c5;
+$color-secondary: $c4;
+
+$color-background: #fff;
+$color-background-night: #ddd;
+$color-background-offset: mix($color-background, invert($color-background), 97%);
+
+$color-text: #000;// invert($color-background);
+$color-text-inverted: invert($color-text);
+
+$svg-wall-color: mix($color-text, $color-background, 40%);
+$svg-furniture-color: $svg-wall-color;
+$svg-window-door-color: lighten($svg-wall-color, 5%);
+$svg-lightbulb-on-color: #fff;
+$svg-lightbulb-on-stroke-color: darken($svg-lightbulb-on-color, 10%);
+$svg-lightbulb-off-color: #666;
+$svg-lightbulb-off-stroke-color: darken($svg-lightbulb-off-color, 20%);
+$svg-color-motion: $color-secondary;

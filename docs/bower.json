@@ -1,0 +1,11 @@
+{
+  "name": "smartthings",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "sprintf": "~1.0.0",
+    "chroma-js": "gka/chroma.js#~0.5.8",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {}
+}

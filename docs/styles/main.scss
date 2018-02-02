@@ -1,0 +1,56 @@
+@import "webfonts";
+@import "colors";
+@import "mixins";
+@import "weights";
+@import "sizes";
+
+@import "slider";
+@import "timeline";
+@import "floorplan";
+@import "button";
+@import "sidebar";
+@import "events-log";
+@import "device-inspector";
+@import "media-queries";
+
+html, body {
+	height: 100%;
+}
+body {
+	font: 1em/1.2em "Source Sans Pro", "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: $color-background;
+	color: $color-text;
+	transition: background .5s ease;
+	position: relative;
+}
+body.night {
+	background-color: $color-background-night;
+}
+h1 {
+	@extend %weight-light;
+	@extend %size-bigger;
+	display: none;
+}
+h2 {
+	@extend %weight-light;
+	@extend %size-big;
+}
+h3 {
+	@extend %weight-normal;
+	@extend %size-normal;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	margin: 1em 0 0;
+	padding: 0 0 .3em;
+}
+.wrapper {
+	width: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: $timeline-height;
+	position: absolute;
+	overflow: auto;
+}

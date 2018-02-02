@@ -1,0 +1,53 @@
+$timeline-height: 5em;
+
+.timeline {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: $timeline-height;
+	background-color: $color-background-offset;
+	.button, .slider, .timeline-chart {
+		position: absolute;
+	}
+	.button {
+		left: 0;
+		top: 0;
+		width: $timeline-height * .8;
+		height: $timeline-height * .8;
+		overflow: hidden;
+	}
+	.slider {
+		left: 0;
+		bottom: 0;
+		width: $timeline-height * .8;
+		height: $timeline-height * .2;
+		@include slider-height($timeline-height * .2);
+	}
+	.timeline-chart {
+		left: $timeline-height * .8;
+		right: 0;
+		text-align: center;
+		cursor: grab;
+	}
+	.timeline-chart-day, .timeline-chart-power {
+		top: 0;
+		height: 100%;
+	}
+	.timeline-chart-presence {
+		bottom: 0;
+		height: 10%;
+	}
+}
+.button-play-pause {
+	.default { display: none; }
+	&.playing:after { content: '▐▐  '; }
+	&.paused:after { content: '▶'; }	
+}
+.backwards .button-play-pause.paused:after { content: '◀︎'; }
+#timeline-graph {
+	width: 100%;
+	height: $timeline-height;
+}
+.dragging, .dragging .timeline-chart {
+	cursor: grabbing !important;
+}

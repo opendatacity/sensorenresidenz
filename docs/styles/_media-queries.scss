@@ -1,0 +1,6 @@
+@media screen and (min-width: 480px) {
+	@include sizes(m-);
+	svg .label {
+		@extend %m-size-small;
+	}
+}

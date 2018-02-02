@@ -1,0 +1,23 @@
+@function golden-ratio ($n, $exp: 1) {
+	$r: 1.6180339887;
+	@if $exp >= 0 {
+		@for $i from 1 through $exp {
+			$n: $n * $r;
+		}
+	} @else {
+		@for $i from $exp to 0 {
+			$n: $n / $r;
+		}
+	}
+	@return $n;
+}
+@mixin sizes ($prefix: '') {
+	$base: 1em;
+	%#{$prefix}size-biggest { font-size: golden-ratio($base, 3); line-height: 1.2em; }
+	%#{$prefix}size-bigger { font-size: golden-ratio($base, 2); line-height: 1.2em; }
+	%#{$prefix}size-big { font-size: golden-ratio($base, 1); line-height: 1.2em; }
+	%#{$prefix}size-normal { font-size: $base; line-height: 1.2em; }
+	%#{$prefix}size-small { font-size: golden-ratio($base, -1); line-height: 1.2em; }
+	%#{$prefix}size-smallest { font-size: golden-ratio($base, -2); line-height: 1.2em; }
+}
+@include sizes;

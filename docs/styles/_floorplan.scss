@@ -1,0 +1,132 @@
+%crisp {
+	shape-rendering: crispEdges;
+}
+%windoor {
+	stroke: $svg-window-door-color;
+	stroke-width: 2px;
+	fill: none;
+//	shape-rendering: crispEdges;
+}
+%delayed-transition {
+	transition: all .2s ease;
+	transition-delay: .5s;
+}
+.floorplan {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 70%;
+	max-width: 563px;
+}
+svg {
+	box-sizing: border-box;
+	padding: .5em;
+	max-width: 100%;
+	max-height: 100%;
+
+	.wall {
+		@extend %crisp;
+		stroke: $svg-wall-color;
+		fill: none;
+		&-outer { stroke-width: 10px; }
+		&-inner { stroke-width: 6px; }
+	}
+	.window {
+		@extend %windoor;
+		opacity: .3;
+	}
+	.railing {
+		@extend %windoor;
+	}
+	.door {
+		@extend %windoor;
+		opacity: .5;
+	}
+	.door-path {
+		@extend %crisp;
+		opacity: .07;
+	}
+
+	.furniture {
+		@extend %crisp;
+		fill: $svg-furniture-color;
+		opacity: .15;
+	}
+
+	.sensor {
+		cursor: pointer;
+	}
+	.motion circle {
+		opacity: .3;
+	}
+	.motion-on circle {
+		fill: $svg-color-motion;
+		opacity: .8;
+	}
+	.motion polygon {
+		stroke: rgba($svg-color-motion, .2);
+		fill: rgba($svg-color-motion, .1);
+		cursor: default;
+	}
+	.motion-off polygon {
+		@extend %delayed-transition;
+		display: none;
+	}
+	.contact line {
+		//transition: transform .5s ease;
+		transform-origin: bottom center;
+	}
+	.contact-off line {
+		transform: rotate(-90deg);
+	}
+	.contact-on line {
+	}
+
+	.socket {
+		stroke: #000;
+	}
+	.socket.switch-off {
+		fill: rgba(#000, .1);
+	}
+
+	.presence-off {
+		fill: rgba($color-background, 0);
+		stroke: $svg-wall-color;
+	}
+
+	.bulb {
+		fill: $svg-lightbulb-off-color;
+		stroke: $svg-lightbulb-off-stroke-color;
+		stroke-width: 1px;
+	}
+	.shine {
+		fill: none;
+		opacity: .5;
+	}
+	.switch-on {
+		.bulb, .shine {
+			fill: $svg-lightbulb-on-color;
+		}
+		.bulb {
+			stroke: $svg-lightbulb-on-stroke-color;
+			stroke-width: 1px;
+		}
+	}
+	.switch-off {
+		.shine {
+		}
+	}
+	.label {
+		opacity: .7;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		-webkit-font-smoothing: antialiased;
+		@extend %size-normal;
+		@extend %weight-bold;
+	}
+
+	.null {
+		display: none;
+	}
+}
